@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Home, Package, Bell, FileText, User, Map, RotateCcw, DollarSign, BarChart3 } from "lucide-react";
 
 interface NavigationProps {
   userRole: 'customer' | 'collector';
@@ -10,19 +11,19 @@ interface NavigationProps {
 
 export const Navigation = ({ userRole, activeTab, onTabChange, onLogout }: NavigationProps) => {
   const customerTabs = [
-    { id: 'home', label: 'Beranda', icon: '🏠' },
-    { id: 'pickups', label: 'Pickup Saya', icon: '📦' },
-    { id: 'notifications', label: 'Notifikasi', icon: '🔔' },
-    { id: 'history', label: 'Riwayat', icon: '📋' },
-    { id: 'account', label: 'Akun', icon: '👤' }
+    { id: 'home', label: 'Beranda', icon: Home },
+    { id: 'pickups', label: 'Pickup Saya', icon: Package },
+    { id: 'notifications', label: 'Notifikasi', icon: Bell },
+    { id: 'history', label: 'Riwayat', icon: FileText },
+    { id: 'account', label: 'Akun', icon: User }
   ];
 
   const collectorTabs = [
-    { id: 'map', label: 'Peta Pickup', icon: '🗺️' },
-    { id: 'active', label: 'Pickup Aktif', icon: '🔄' },
-    { id: 'transactions', label: 'Transaksi', icon: '💰' },
-    { id: 'subscription', label: 'Langganan', icon: '📊' },
-    { id: 'account', label: 'Akun', icon: '👤' }
+    { id: 'map', label: 'Peta Pickup', icon: Map },
+    { id: 'active', label: 'Pickup Aktif', icon: RotateCcw },
+    { id: 'transactions', label: 'Transaksi', icon: DollarSign },
+    { id: 'subscription', label: 'Langganan', icon: BarChart3 },
+    { id: 'account', label: 'Akun', icon: User }
   ];
 
   const tabs = userRole === 'customer' ? customerTabs : collectorTabs;
@@ -30,41 +31,41 @@ export const Navigation = ({ userRole, activeTab, onTabChange, onLogout }: Navig
   return (
     <>
       {/* Top Header */}
-      <div className="bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100 p-4 flex justify-between items-center sticky top-0 z-40">
+      <div className="bg-white border-b border-gray-200 p-4 flex justify-between items-center sticky top-0 z-40">
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center text-white font-bold shadow-lg">
-            K
+          <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white">
+            <Package size={24} />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-gray-800">KardusKulaku</h1>
+            <h1 className="text-xl font-semibold text-gray-900">KardusKulaku</h1>
             <p className="text-sm text-gray-500 capitalize">{userRole === 'customer' ? 'Pelanggan' : 'Pengepul'}</p>
           </div>
         </div>
-        <Button variant="outline" onClick={onLogout} className="text-red-600 border-red-200 hover:bg-red-50 hover:border-red-300 transition-colors">
+        <Button variant="outline" onClick={onLogout} className="text-gray-600 border-gray-300 hover:bg-gray-50">
           Logout
         </Button>
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-gray-100 shadow-2xl z-50">
-        <div className="grid grid-cols-5 h-18">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => onTabChange(tab.id)}
-              className={`flex flex-col items-center justify-center space-y-1 p-3 transition-all duration-300 ${
-                activeTab === tab.id
-                  ? 'text-green-600 bg-green-50/80 relative'
-                  : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50/80'
-              }`}
-            >
-              {activeTab === tab.id && (
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-green-600 rounded-full"></div>
-              )}
-              <span className="text-xl">{tab.icon}</span>
-              <span className="text-xs font-medium leading-tight text-center">{tab.label}</span>
-            </button>
-          ))}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">
+        <div className="grid grid-cols-5 h-16">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => onTabChange(tab.id)}
+                className={`flex flex-col items-center justify-center space-y-1 p-2 transition-colors ${
+                  activeTab === tab.id
+                    ? 'text-green-600 bg-green-50'
+                    : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                }`}
+              >
+                <Icon size={20} strokeWidth={activeTab === tab.id ? 2.5 : 2} />
+                <span className="text-xs font-medium">{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </>

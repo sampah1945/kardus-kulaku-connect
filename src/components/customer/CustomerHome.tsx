@@ -2,6 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Plus, Package, Scale, DollarSign, Check, Camera, Clock, Star } from "lucide-react";
 
 export const CustomerHome = () => {
   const recentPickups = [
@@ -31,44 +32,59 @@ export const CustomerHome = () => {
   return (
     <div className="space-y-6">
       {/* Welcome Card */}
-      <Card className="bg-gradient-to-r from-green-500 to-blue-600 text-white">
+      <Card className="bg-green-600 text-white border-0">
         <CardHeader>
-          <CardTitle className="text-2xl">Selamat Datang! 👋</CardTitle>
+          <CardTitle className="text-2xl flex items-center gap-3">
+            <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+              <Package className="text-white" size={20} />
+            </div>
+            Selamat Datang!
+          </CardTitle>
           <CardDescription className="text-green-100">
             Siap untuk menjual barang bekas Anda?
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Button className="bg-white text-green-600 hover:bg-gray-100 font-semibold">
-            + Buat Permintaan Pickup Baru
+          <Button className="bg-white text-green-600 hover:bg-gray-50 font-medium flex items-center gap-2">
+            <Plus size={18} />
+            Buat Permintaan Pickup Baru
           </Button>
         </CardContent>
       </Card>
 
       {/* Quick Stats */}
       <div className="grid grid-cols-3 gap-4">
-        <Card className="text-center">
+        <Card className="text-center border-gray-200">
           <CardContent className="pt-6">
-            <div className="text-2xl font-bold text-green-600">12</div>
+            <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center mx-auto mb-2">
+              <Package className="text-green-600" size={20} />
+            </div>
+            <div className="text-2xl font-semibold text-gray-900">12</div>
             <div className="text-sm text-gray-500">Total Pickup</div>
           </CardContent>
         </Card>
-        <Card className="text-center">
+        <Card className="text-center border-gray-200">
           <CardContent className="pt-6">
-            <div className="text-2xl font-bold text-blue-600">45 kg</div>
+            <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center mx-auto mb-2">
+              <Scale className="text-green-600" size={20} />
+            </div>
+            <div className="text-2xl font-semibold text-gray-900">45 kg</div>
             <div className="text-sm text-gray-500">Total Berat</div>
           </CardContent>
         </Card>
-        <Card className="text-center">
+        <Card className="text-center border-gray-200">
           <CardContent className="pt-6">
-            <div className="text-2xl font-bold text-orange-600">Rp 230K</div>
+            <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center mx-auto mb-2">
+              <DollarSign className="text-green-600" size={20} />
+            </div>
+            <div className="text-2xl font-semibold text-gray-900">Rp 230K</div>
             <div className="text-sm text-gray-500">Total Earning</div>
           </CardContent>
         </Card>
       </div>
 
       {/* Recent Pickups */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
             <span>Pickup Terbaru</span>
@@ -79,7 +95,7 @@ export const CustomerHome = () => {
           {recentPickups.map((pickup) => (
             <div key={pickup.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div className="flex-1">
-                <div className="font-medium">{pickup.items}</div>
+                <div className="font-medium text-gray-900">{pickup.items}</div>
                 <div className="text-sm text-gray-500">{pickup.weight} • {pickup.date}</div>
               </div>
               <Badge className={getStatusColor(pickup.status)}>
@@ -91,29 +107,40 @@ export const CustomerHome = () => {
       </Card>
 
       {/* How to Use */}
-      <Card>
+      <Card className="border-gray-200">
         <CardHeader>
-          <CardTitle>💡 Tips Menggunakan KardusKulaku</CardTitle>
+          <CardTitle className="flex items-center gap-2">
+            <div className="w-6 h-6 bg-green-50 rounded-lg flex items-center justify-center">
+              <Star className="text-green-600" size={16} />
+            </div>
+            Tips Menggunakan KardusKulaku
+          </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
+        <CardContent className="space-y-4">
           <div className="flex items-start space-x-3">
-            <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm font-bold">1</div>
+            <div className="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <Camera className="text-green-600" size={16} />
+            </div>
             <div className="flex-1">
-              <div className="font-medium">Foto yang Jelas</div>
+              <div className="font-medium text-gray-900">Foto yang Jelas</div>
               <div className="text-sm text-gray-500">Upload foto barang untuk estimasi harga yang lebih akurat</div>
             </div>
           </div>
           <div className="flex items-start space-x-3">
-            <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-sm font-bold">2</div>
+            <div className="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <Scale className="text-green-600" size={16} />
+            </div>
             <div className="flex-1">
-              <div className="font-medium">Estimasi Berat</div>
+              <div className="font-medium text-gray-900">Estimasi Berat</div>
               <div className="text-sm text-gray-500">Timbang atau estimasi berat untuk menarik pengepul yang tepat</div>
             </div>
           </div>
           <div className="flex items-start space-x-3">
-            <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 text-sm font-bold">3</div>
+            <div className="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <Clock className="text-green-600" size={16} />
+            </div>
             <div className="flex-1">
-              <div className="font-medium">Jadwal Fleksibel</div>
+              <div className="font-medium text-gray-900">Jadwal Fleksibel</div>
               <div className="text-sm text-gray-500">Berikan beberapa opsi waktu untuk memudahkan pengepul</div>
             </div>
           </div>
