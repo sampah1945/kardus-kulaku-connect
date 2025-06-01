@@ -26,7 +26,7 @@ export const CustomerAccount = () => {
           <div className="flex items-center space-x-4">
             <Avatar className="w-16 h-16">
               <AvatarImage src="/placeholder.svg" />
-              <AvatarFallback className="bg-gradient-to-br from-green-500 to-blue-600 text-white text-xl">
+              <AvatarFallback className="bg-gradient-to-br from-green-500 to-emerald-600 text-white text-xl">
                 {userProfile.name.split(' ').map(n => n[0]).join('')}
               </AvatarFallback>
             </Avatar>
@@ -46,7 +46,7 @@ export const CustomerAccount = () => {
           </div>
         </CardHeader>
         <CardContent>
-          <Button className="w-full bg-gradient-to-r from-green-500 to-blue-600">
+          <Button className="w-full bg-gradient-to-r from-green-500 to-emerald-600">
             Edit Profil
           </Button>
         </CardContent>
@@ -60,7 +60,7 @@ export const CustomerAccount = () => {
         <CardContent>
           <div className="grid grid-cols-3 gap-4 text-center">
             <div>
-              <div className="text-2xl font-bold text-blue-600">{userProfile.totalPickups}</div>
+              <div className="text-2xl font-bold text-emerald-600">{userProfile.totalPickups}</div>
               <div className="text-sm text-gray-500">Total Pickup</div>
             </div>
             <div>

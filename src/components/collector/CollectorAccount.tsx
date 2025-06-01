@@ -29,7 +29,7 @@ export const CollectorAccount = () => {
           <div className="flex items-center space-x-4">
             <Avatar className="w-16 h-16">
               <AvatarImage src="/placeholder.svg" />
-              <AvatarFallback className="bg-gradient-to-br from-blue-500 to-green-600 text-white text-xl">
+              <AvatarFallback className="bg-gradient-to-br from-emerald-500 to-green-600 text-white text-xl">
                 {collectorProfile.businessName.split(' ').map(n => n[0]).join('')}
               </AvatarFallback>
             </Avatar>
@@ -37,7 +37,7 @@ export const CollectorAccount = () => {
               <CardTitle className="flex items-center gap-2">
                 {collectorProfile.businessName}
                 {collectorProfile.verified && (
-                  <Badge className="bg-blue-100 text-blue-800">✓ Terverifikasi</Badge>
+                  <Badge className="bg-emerald-100 text-emerald-800">✓ Terverifikasi</Badge>
                 )}
               </CardTitle>
               <CardDescription className="space-y-1">
@@ -50,7 +50,7 @@ export const CollectorAccount = () => {
           </div>
         </CardHeader>
         <CardContent>
-          <Button className="w-full bg-gradient-to-r from-blue-500 to-green-600">
+          <Button className="w-full bg-gradient-to-r from-emerald-500 to-green-600">
             Edit Profil Bisnis
           </Button>
         </CardContent>
@@ -74,7 +74,7 @@ export const CollectorAccount = () => {
             <span>Status:</span>
             <Badge className="bg-green-100 text-green-800">Aktif</Badge>
           </div>
-          <Button variant="outline" className="w-full text-blue-600 border-blue-200 hover:bg-blue-50">
+          <Button variant="outline" className="w-full text-emerald-600 border-emerald-200 hover:bg-emerald-50">
             Kelola Langganan
           </Button>
         </CardContent>
@@ -88,7 +88,7 @@ export const CollectorAccount = () => {
         <CardContent>
           <div className="grid grid-cols-2 gap-4 text-center">
             <div>
-              <div className="text-2xl font-bold text-blue-600">{collectorProfile.totalPickups}</div>
+              <div className="text-2xl font-bold text-emerald-600">{collectorProfile.totalPickups}</div>
               <div className="text-sm text-gray-500">Total Pickup</div>
             </div>
             <div>
@@ -100,7 +100,7 @@ export const CollectorAccount = () => {
               <div className="text-sm text-gray-500">Rating</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-purple-600">{collectorProfile.joinDate}</div>
+              <div className="text-2xl font-bold text-teal-600">{collectorProfile.joinDate}</div>
               <div className="text-sm text-gray-500">Bergabung</div>
             </div>
           </div>
@@ -144,13 +144,13 @@ export const CollectorAccount = () => {
           </div>
           <div className="flex justify-between items-center">
             <span>Mode</span>
-            <Badge className="bg-blue-100 text-blue-800">Collector Pro</Badge>
+            <Badge className="bg-emerald-100 text-emerald-800">Collector Pro</Badge>
           </div>
           <div className="grid grid-cols-2 gap-3">
             <Button variant="outline" className="text-green-600 border-green-200 hover:bg-green-50">
               💬 Chat Support
             </Button>
-            <Button variant="outline" className="text-blue-600 border-blue-200 hover:bg-blue-50">
+            <Button variant="outline" className="text-emerald-600 border-emerald-200 hover:bg-emerald-50">
               📖 Panduan
             </Button>
           </div>

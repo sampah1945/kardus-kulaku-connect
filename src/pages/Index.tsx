@@ -31,7 +31,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
       <div className="container mx-auto px-6 py-16">
         <HeroSection onLogin={handleLogin} />
         
@@ -53,28 +53,28 @@ const Index = () => {
                 title: "Buat Permintaan",
                 description: "Pelanggan membuat permintaan pickup dengan detail barang dan lokasi",
                 icon: "📝",
-                color: "from-emerald-500 to-emerald-600"
+                color: "from-green-500 to-green-600"
               },
               {
                 step: "2", 
                 title: "Tampil di Peta",
                 description: "Permintaan muncul di peta untuk pengepul sesuai tier langganan",
                 icon: "🗺️",
-                color: "from-blue-500 to-blue-600"
+                color: "from-emerald-500 to-emerald-600"
               },
               {
                 step: "3",
                 title: "Negosiasi",
                 description: "Pengepul menghubungi pelanggan untuk negosiasi harga dan jadwal",
                 icon: "📞",
-                color: "from-purple-500 to-purple-600"
+                color: "from-teal-500 to-teal-600"
               },
               {
                 step: "4",
                 title: "Pickup & Bayar",
                 description: "Pengepul datang, timbang barang, dan bayar langsung ke pelanggan",
                 icon: "💰",
-                color: "from-orange-500 to-orange-600"
+                color: "from-green-600 to-emerald-600"
               }
             ].map((item) => (
               <Card key={item.step} className="group text-center hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm">
@@ -122,7 +122,7 @@ const Index = () => {
                 priceNote: "/bulan",
                 weight: "5-50 kg", 
                 radius: "0-5 km",
-                gradient: "from-blue-500 to-blue-600",
+                gradient: "from-emerald-500 to-emerald-600",
                 popular: true,
                 features: ["Semua fitur basic", "Priority support", "5 km radius", "Analytics dasar"]
               },
@@ -132,15 +132,15 @@ const Index = () => {
                 priceNote: "/bulan",
                 weight: "> 50 kg",
                 radius: "0-10 km",
-                gradient: "from-emerald-500 to-emerald-600",
+                gradient: "from-green-500 to-green-600",
                 popular: false,
                 features: ["Semua fitur premium", "24/7 support", "10 km radius", "Advanced analytics", "Export data"]
               }
             ].map((plan) => (
-              <Card key={plan.tier} className={`relative border-0 shadow-xl hover:shadow-2xl transition-all duration-500 ${plan.popular ? 'scale-105 ring-2 ring-blue-500' : ''}`}>
+              <Card key={plan.tier} className={`relative border-0 shadow-xl hover:shadow-2xl transition-all duration-500 ${plan.popular ? 'scale-105 ring-2 ring-emerald-500' : ''}`}>
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 text-sm font-semibold">
+                    <Badge className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-4 py-2 text-sm font-semibold">
                       Paling Populer
                     </Badge>
                   </div>
@@ -169,7 +169,7 @@ const Index = () => {
                   <div className="space-y-3 mb-8">
                     {plan.features.map((feature, index) => (
                       <div key={index} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                         <span className="text-gray-600">{feature}</span>
                       </div>
                     ))}
@@ -184,8 +184,8 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-100 to-blue-100 px-6 py-3 rounded-full">
-              <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-emerald-100 px-6 py-3 rounded-full">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
               <span className="font-semibold text-gray-700">Trial 30 hari tier Pengepul Besar untuk registrasi baru</span>
             </div>
           </div>
@@ -208,37 +208,37 @@ const Index = () => {
                 title: "Peta Interaktif",
                 description: "Visualisasi pickup dengan marker color-coded berdasarkan berat dan jarak real-time",
                 icon: "🗺️",
-                gradient: "from-blue-500 to-cyan-500"
+                gradient: "from-emerald-500 to-teal-500"
               },
               {
                 title: "Filter Otomatis",
                 description: "Pickup difilter otomatis sesuai tier langganan dan radius operasional",
                 icon: "🔍",
-                gradient: "from-emerald-500 to-teal-500"
+                gradient: "from-green-500 to-emerald-500"
               },
               {
                 title: "Riwayat Transaksi",
                 description: "Pencatatan lengkap semua transaksi dengan laporan harian dan bulanan",
                 icon: "📊",
-                gradient: "from-purple-500 to-indigo-500"
+                gradient: "from-teal-500 to-green-500"
               },
               {
                 title: "Notifikasi Real-time",
                 description: "Update langsung saat ada pickup baru atau perubahan status penting",
                 icon: "🔔",
-                gradient: "from-orange-500 to-red-500"
+                gradient: "from-green-600 to-emerald-600"
               },
               {
                 title: "Rating & Review",
                 description: "Sistem rating untuk membangun kepercayaan dan reputasi antar pengguna",
                 icon: "⭐",
-                gradient: "from-yellow-500 to-orange-500"
+                gradient: "from-emerald-600 to-teal-600"
               },
               {
                 title: "Export Laporan",
                 description: "Export data transaksi ke CSV/Excel untuk keperluan analisis bisnis",
                 icon: "📋",
-                gradient: "from-pink-500 to-rose-500"
+                gradient: "from-teal-600 to-green-600"
               }
             ].map((feature) => (
               <Card key={feature.title} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
